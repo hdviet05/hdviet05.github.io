@@ -58,3 +58,8 @@ a{
 a:active{
     transition: ease-in-out;
 }
+
+table td{
+    text-align: justify;
+    vertical-align: middle;
+}
