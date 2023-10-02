@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+body h1,h2,h3,h4,p,ul,li,tr,td {
+    font-family: 'Lora', serif;
+}
+
+.content {
+    margin-left: 15px;
+    padding: auto;
+}
+
+body {
+    font-size: 14px;
+    background-color: #fff7f5;
+    font-family: 'Lora', serif;
+}
+
+body main h1{
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+body main h2{
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+}
+
+body main h3 {
+    font-size: 1.2rem;
+    font-style: italic;
+    letter-spacing: 0.1em;
+}
+
+body main h4 {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+a{
+    text-decoration: none;
+}
+
+.subject{
+    margin-left:15%;
+    margin-right: 15%;
+}
+
+.subject h3{
+    font-family: 'Lora', serif;
+    font-size: 90%;
+
+}
+
+a:active{
+    transition: ease-in-out;
+}

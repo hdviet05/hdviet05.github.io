@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../w3.css">
+        <link rel="stylesheet" href="../subject-main-style.css">
+    </head>
+    <body>
+        <header class="w3-container w3-center w3-padding-32">
+            <h1 class="w3-wide">Matrix - Determinant</h1>
+            <p><span class='w3-opacity'>26.09.2023</span></p>
+        </header>
+        <main class="w3-container w3-padding-32">
+            <div class="content">
+                <h1>1.1. Basic concepts of the matrix</h1>
+                    <h2>1.1.1. Definition</h2>
+                        <p class="w3-panel w3-leftbar">A matrix of size <em>m x n</em> is a rectangular array of numbers, arranged in <em>m</em> rows and <em>n</em> columns</p>
+                        <p>A matrix is often denoted by capitalized letters like <strong>A</strong>, <strong>B</strong>, <strong>C</strong>,...</p>
+                        <p>$$A = \begin{bmatrix} a_{11} & a_{12} & ... & a_{1n} \\ a_{21} & a_{22} & ... & a_{2n} \\ a_{m1} & a_{m2} & ... & a_{mn} \end{bmatrix}$$</p>
+                        <p> It can also be written as:</p>
+                        <p>$$A = [a_{ij}]_{mn}$$</p>
+                        <p>Or: </p>
+                        <p>$$A = (a_{ij})_{mn}$$</p>
+                        <p>\(a_{ij}\) is the element in the \(i^{th}\) row and \(j^{th}\) column of \(A\). </p>
+                        <br>
+                            <h3>The Zero Matrix</h3>
+                                <p style="padding-left:4rem;">is the matrix whose all elements are 0.</p>
+                                <p style="padding-left:4rem;">is denoted by \((O)_{mxn}\), or \((O)_{mxn}\).</p>
+                                <br>
+                            <h3>Equality of two matrices</h3>
+                                <p style="padding-left: 4rem;">Let \(A = [a_{ij}]_{mxn}\), \(B = [b_{ij}]_{mxn}\)</p>
+                                <p style="padding-left: 4rem;">\(A = B \iff  a_{ij} = b_{ij}, \forall i = 1, 2, ...,m; j = 1, 2, ..., n.\)</p>
+                                <br>
+                            <h3>The Transpose of a matrix</h3>
+                                <p class="w3-panel w3-leftbar">The transpose of a matrix \(A = [a_{ij}]_{mxn}\) is found by interchanging its rows into columns and vice versa.</p>
+                                <p>The tranpose of \(A\) is denoted by \(A^T\).</p>
+                                <p>$$ A^T = [a_{ij}]_{nxm} $$</p>
+                                <br>
+                    <h2>1.1.2. Square Matrices</h2>
+                        <p class="w3-panel w3-leftbar">A square matrix is a matrix with the same number of rows and columns.</p>
+                        <P>$$A = \begin{bmatrix} a_{11} & a_{12} & ... & a_{1n} \\ a_{21} & a_{22} & ... & a_{2n} \\ a_{n1} & a_{n2} & ... & a{nn} \end{bmatrix}$$</P>
+                        <br>
+                        <p>$$ A = [a_{ij}]_n $$</p>
+                        <br>
+                        <p>Let \(A = [a_{ij}]_n \) be an n-square matrix. The <strong><em>main diagonal</em></strong> of \(A\) consists of the elements \(a_{11}, a_{22}, ..., a_{nn} \).</p>
+                        <p>The <strong><em>trace</em></strong> of \(A\), denoted by \(Tr(A )\), is the sum of the main diagonal elements.</p>
+                        <p>That is: </p>
+                        <p>$$Tr(A) = a_{11} + a_{22} + ... + a_{nn} $$</p>
+                        <br>
+
+                        <h3>Special Square Matrices</h3>
+                        <p>Let \(A = [a_{ij}]_n \) be a square matrix.</p>
+                        <br>
+                        <h4>Diagonal Matrices</h4>
+                            <p class="w3-panel w3-leftbar">\(A\) is called a <strong><em>diogonal matrix</em></strong> if all elements outside of the main diagonal of \(A\) are zero.</p>
+                            <p>$$ a_{ij} = 0, \forall i \neq j  $$</p>
+                            <p>\( A = \begin{bmatrix} 11 & 0 & 0 \\ 0 & -5 & 0 \\ 0 & 0 & 6 \end{bmatrix} \) is a 3 x 3 diagonal matrix.</p>
+                            <br>
+                        <h4>Identity Matrices</h4>
+                            <p class="w3-panel w3-leftbar">A is called an identity matrix if A is the diagonal matrix with \(a_{ij} = 1, \forall i = 1, 2, ..., n \).</p>
+                            <p>$$ A = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{cases} a_{ij} = 1, \forall i = \overline{1, n} \\ a_{ij} = 0, \forall i \neq j \end{cases} $$</p>
+                            <br>
+                        <h4>Upper Triangular Matrices</h4>
+                            <p class="w3-panel w3-leftbar">\(A\) is called the <strong><em>upper triangular matrix</em></strong> if all elements below the main diagonal are zero.</p>
+                            <p>$$a_{ij} = 0, \forall i > j $$</p>
+                            <p>$$A = \begin{bmatrix} -3 & 7 & 10 \\ 0 & \frac{1}{2} & 15 \\ 0 & 0 & 5 \end{bmatrix}$$</p>
+                            <br>
+                        <h4>Lower Triangular Matrices</h4>
+                            <p class="w3-panel w3-leftbar">\(A\) is called the <strong><em>lower triangular matrix</em></strong> if all elements above the main diagonal are zero.</p>
+                            <br>
+                        <h4>Symmetric Matrices</h4>
+                        <p class="w3-panel w3-leftbar">\(A\) is called a symmetric matrix if \(A\) equals its transpose.</p>
+                        <P>$$A = A^T $$</P>
+                        <P>$$ a_{ij} = a_{ji},   \forall{i, j = 1, 2, ..., n.} $$</P>
+                        <br>
+                        <hr>
+                <h1>1.2. Basic Operations of Matrices</h1>
+                    <h2>1.2.1. Matrix Addition</h2>
+                        <h3>Definition</h3>
+                            <p class="w3-panel w3-leftbar">The sum of two matrices \(A = [a_{ij}]_{m\times n} \) and \(B = [b_{ij}]_{m \times n} \), denoted by \(A + B \), is a matrix which has the same size as \(A\) and \(B\) with its \((i, j) \) element computed by adding \(a_{ij}\) and \(b_{ij}\).</p>
+                            <br>
+                        <h3>Properties</h3>
+                            <p>Let \(A = [a_{ij}]_{m \times n} \), \(B = [b_{ij}]_{m \times n} \) and \(C = [c_{ij}]_{m \times n} \)</p>
+                            <p>$$ \rightarrow A+B=B+A$$</p>
+                            <P>$$ A+(B+C)=(A+B)+C$$</P>
+                            <P>$$ A+(O)_{m \times n} = A$$</P>
+                            <br>
+                    <h2>1.2.2 Multiplication of matrices by real numbers <em>(scalar multiplication)</em>.</h2>
+                        <h3>Definition</h3>
+                            <p class="w3-panel w3-leftbar">Let there be matrix \(A=[a_{ij}]_{m \times n} \) and a real number \(k\). The multiplication of \(A\) with \(k\), denoted by \(kA\), is a matrix which is obtained by multiplying each element of \(A\) by \(k\).</p>
+                            <br>
+                        <h3>Properties</h3>
+                            <p>Let \(A=[a_{ij}]_{m \times n}, B=[b_{ij}]_{m \times n}\) and real numbers \(\alpha , \beta \):</p>
+                            <p>$$ \alpha (\beta A) = \beta (\alpha A) = (\alpha \beta ) A$$</p>
+                            <p>$$ \alpha (A+B) = \alpha A + \alpha B$$</p>
+                            <p>$$ (\alpha + \beta)A = \alpha A + \beta A$$</p>
+                            <p>$$ 1 A = A$$</p>
+                            <p>$$0 A = (O)_{m \times n}$$</p>
+                            <br>
+                    <h2>1.2.3. Product of Matrices</h2>
+                        <h3>Definition</h3>
+                            <p class="w3-panel w3-leftbar">The product of the matrices \(A=[a_{ij}]_{m \times n} \) and \(B=[b_{ij}]_{m \times n} \) is a matrix having size \(m ]times n\), denoted by \(A B = [c_{ij}]_{m \times n} \), with \(c_{ij}\) defined as \(\sum_{s=1}^k a_{is} \times b_{sj}, \forall i = \overline{1, m} , j = \overline{1,n} \).</p>
+                            <br>
+                        <h3>Remarks</h3>
+                            <p>The product \(AB\) is defined if and only if the number of columns in \(A\) equals the number of rows in \(B\).</p>
+                            <p>Matrix \(AB\) has the same number of rows as \(A\) nd the same number of columnns as \(B\).</p>
+
+            </div>
+        </main>
+    </body>
+</html>

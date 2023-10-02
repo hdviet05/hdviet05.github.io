@@ -21,12 +21,12 @@ a{
 .subject{
     margin-left:15%;
     margin-right: 15%;
+    display: block;
 }
 
 .subject h3{
     font-family: 'Lora', serif;
     font-size: 90%;
-    font-weight: bold;
 }
 
 a:active{
