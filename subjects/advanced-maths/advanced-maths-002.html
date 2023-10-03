@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="../../w3.css">
+        <link rel="stylesheet" href="../subject-main-style.css">
+    </head>
+    <body>
+        <header class="w3-container w3-center w3-padding-32">
+            <h1 class="w3-wide">Matrix - Determinant (continued)</h1>
+            <p><span class='w3-opacity'>03.10.2023</span></p>
+        </header>
+        <main class="w3-container w3-padding-32">
+            <div class="content">
+                <h2>Properties</h2>
+                    <p>Let matrices  \(A, A' \) having size \(m \times n\), \(B    and B\) having size \( n \times p\), \( C\) having size \( p \times s\), and real number \( \alpha\)</p>
+                    <ul class="w3-ul">
+                        <li>i. \((AB)C = A(BC) \)</li>
+                        <li>ii. \((A+A')B = AB + A'B\)</li>
+                        <li> \(A(B+B') = AB + AB' \)</li>
+                        <li>iii. \((2 \alpha ) B = A( \alpha B) = \alpha (AB) \)</li>
+                        <li>iv. Let \(E_n\) and \(E_m \) be identity matrices having size \( n \times n\) and \(m \times m \), respectively. Then \( AE_n = A \), \(E_mA = A \). Especially, if A is a square matrix of size \(n\), then \(AE_n = E_nA = A \).</li>
+                    </ul>
+                    <br>
+                    <h3>Remarks</h3>
+                        <p>Matrix multiplication is not commutative.</p>
+                <h2>Definition</h2>
+                    <p>Matrices \(A \) and \( B \) are said to commute if \( AB = BA \). (They ought to be square matrices of the same size in advanced).</p>
+                    <h3>Example</h3>
+                        <p>Let \( A= \begin{bmatrix} 1 & 2 \\ -1 & -1 \end{bmatrix} \). Find all matrices that commute with \( A \)</p>
+                        <p>Suppose \( B = \begin{bmatrix} x & y \\ z & t \end{bmatrix} \)</p>
+                        <p>It means that \(AB = BA \)</p>
+                        <p>\(AB = \begin{bmatrix} x+2z & y+2t \\ -x-z & -y-t \end{bmatrix} \)</p>
+                        <p>\(BA = \begin{bmatrix} x-y & 2x-y \\ z-t & 2z-t \end{bmatrix} \)</p>
+                <h2>c. Power of matrices</h2>
+                    
+            </div>
+        </main>
+    </body>
