@@ -25,6 +25,37 @@
             <div class="w3-card w3-hover-shadow w3-container subject"><a href="/subjects/marxism-leninism/marxism-leninism-main.html">
                 <h3>Marxism-Leninism</h3>
                 <p class="w3-justify"></p>
+                <div>
+                <table>
+                    <tr>
+                        <th>BookId</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Pages</th>
+                    </tr>
+                    <?php
+                    $conn = mysqli_connect("localhost", "root", "", "mybooks");
+                    if ($conn -> connect_error) {
+                        die("Connection Failed:". $conn -> connect_error);
+                    }
+
+                    $sql = "SELECT BookId, Title, Author, Genre, Pages FROM books";
+                    $result = $conn-> query($sql);
+
+                    if ($result -> num_rows > 0) {
+                        while ($row = $result-> fetch_assoc()) {
+                            echo "<tr><td>". $row["BookId"] ."</td><td>". $row["Title"] ."</td><td>". $row["Author"] ."</td><td>". $row["Genre"] .  "</td><td>". $row["Pages"] ."</td></tr>";
+                        }
+                        echo "</table>";
+                    }
+                    else{
+                        echo "0 result";
+                    }
+                    $conn -> close();
+                    ?>
+                </table>
+            <div>
         </main>
     </body>
 </html>
